@@ -1,0 +1,54 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at 50% 45%, #20383a 0, #142629 32%, #111b1e 75%);
+  overflow: hidden;
+}
+
+.topbar, .footer-note { width: min(1120px, calc(100% - 48px)); margin: 0 auto; box-sizing: border-box; }
+.topbar { display: flex; align-items: center; gap: 15px; padding: 28px 0; border-bottom: 1px solid rgba(230, 222, 202, .16); }
+.brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #e0c47a; color: #e0c47a; font-size: 23px; }
+.eyebrow, .calculator-topline, .history-heading, .footer-note { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.eyebrow { color: #d4b969; margin: 0 0 2px; }
+h1 { font: 600 17px Georgia, serif; letter-spacing: .02em; margin: 0; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #69dfad; margin-left: auto; box-shadow: 0 0 16px #69dfad; }
+.workspace { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 48px 24px; }
+.intro-copy { display: flex; align-items: center; gap: 15px; color: #88999a; font-size: 12px; letter-spacing: .08em; justify-content: center; margin-bottom: 25px; }
+.intro-copy p { margin: 0; }
+.line { width: 42px; height: 1px; background: #d4b969; opacity: .55; }
+.calculator-wrap { display: flex; align-items: flex-start; justify-content: center; gap: 30px; }
+.calculator { width: min(100%, 340px); padding: 17px; border: 1px solid rgba(222, 236, 227, .18); border-radius: 18px; background: rgba(27, 42, 45, .8); box-shadow: 0 24px 70px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.05); }
+.calculator-topline, .history-heading { display: flex; justify-content: space-between; color: #819496; font-weight: bold; font-size: 9px; }
+.display { height: 112px; margin: 13px 0 18px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; border-radius: 13px; background: #0f1a20; box-shadow: inset 0 2px 12px rgba(0,0,0,.22); overflow: hidden; }
+.expression { color: #719092; font-size: 15px; min-height: 20px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.display strong { color: #6be2ae; font: 600 clamp(31px, 8vw, 43px) Georgia, serif; text-shadow: 0 0 18px rgba(107,226,174,.38); }
+.keypad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.key { height: 55px; border: 1px solid rgba(255,255,255,.035); border-radius: 12px; color: #e9eee9; background: #27343c; font: 600 17px 'Trebuchet MS', sans-serif; cursor: pointer; transition: transform .16s, filter .16s, background .16s; }
+.key:hover { filter: brightness(1.18); transform: translateY(-2px); }
+.key:active { transform: translateY(1px) scale(.98); }
+.key:focus-visible { outline: 2px solid #69dfad; outline-offset: 2px; }
+.key.operator { color: #e4bc62; background: #4b4435; }
+.key.clear { color: #f17e76; background: #533d42; }
+.key.backspace { color: #e4bc62; background: #4b4435; font-size: 21px; }
+.key.equals { grid-row: span 2; color: #11251e; background: #4ed4a0; font-size: 22px; }
+.key.wide { grid-column: span 2; }
+.history { width: 145px; padding-top: 37px; color: #829497; }
+.history-count { color: #d4b969; }
+.history-item { display: flex; justify-content: space-between; gap: 10px; padding: 15px 0; border-bottom: 1px solid rgba(230, 222, 202, .14); font-size: 11px; }
+.history-item strong { color: #e8d9aa; font-size: 13px; }
+.empty-history { color: #607578; font: 14px/1.45 Georgia, serif; margin-top: 23px; }
+.footer-note { display: flex; justify-content: space-between; padding: 20px 0 25px; color: #607578; border-top: 1px solid rgba(230, 222, 202, .16); }
+.user-info { margin-top: 20px; padding: 15px 17px; border-top: 1px solid rgba(222, 236, 227, .18); border-radius: 8px; background: rgba(27, 42, 45, .5); text-align: center; }
+.user-info p { margin: 8px 0; font-size: 13px; color: #88999a; }
+.user-info strong { color: #d4b969; font-weight: 600; }
+
+@media (max-width: 640px) {
+  .topbar, .footer-note { width: min(100% - 32px, 1120px); }
+  .workspace { padding: 36px 16px; }
+  .calculator-wrap { display: block; }
+  .calculator { margin: 0 auto; }
+  .history { width: min(100%, 340px); margin: 25px auto 0; padding-top: 0; }
+  .history-item { padding: 10px 0; }
+  .empty-history { margin: 15px 0; }
+}
